@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ToreDex — Torprüfung nach ASR A1.7 &amp; DGUV I 208-022 rechtssicher dokumentieren</title>
+  <meta name="description" content="Prüfung kraftbetätigter Tore und Türen nach ASR A1.7, DGUV Information 208-022 &amp; BetrSichV gerichtsfest dokumentieren: Tor-Inventar je Objekt, 12-Punkte-Checkliste, Sichtkontrolle &amp; Sachkundigen-Prüfung, Ampelverfahren, GPS-Stempel, Beweisfotos und PDF-Prüfprotokoll. Für Hausverwaltungen, Facility Management, Industrie und Tor-Servicebetriebe in DACH." />
+  <meta name="theme-color" content="#FAF8FE" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/toredex-icon.png" />
+  <link rel="canonical" href="https://toredex.dexware.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ToreDex" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="ToreDex — Torprüfung nach ASR A1.7 &amp; DGUV I 208-022" />
+  <meta property="og:description" content="Jedes kraftbetätigte Tor im Inventar, jede Prüfung dokumentiert — 12-Punkte-Checkliste, Ampelverfahren, PDF-Prüfprotokoll." />
+  <meta property="og:url" content="https://toredex.dexware.app/" />
+  <meta property="og:image" content="https://toredex.dexware.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ToreDex — Torprüfung nach ASR A1.7 &amp; DGUV I 208-022" />
+  <meta name="twitter:description" content="Jedes kraftbetätigte Tor im Inventar, jede Prüfung dokumentiert — 12-Punkte-Checkliste, Ampelverfahren, PDF-Prüfprotokoll." />
+  <meta name="twitter:image" content="https://toredex.dexware.app/og-image.png" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ToreDex","url":"https://toredex.dexware.app/","description":"Prüfung kraftbetätigter Tore und Türen nach ASR A1.7, DGUV Information 208-022 & BetrSichV gerichtsfest dokumentieren: Tor-Inventar je Objekt, 12-Punkte-Checkliste, Ampelverfahren, GPS-Stempel, Beweisfotos und PDF-Prüfprotokoll. Für Hausverwaltungen, Facility Management, Industrie und Tor-Servicebetriebe in DACH.","operatingSystem":"Android","applicationCategory":"BusinessApplication","image":"https://toredex.dexware.app/og-image.png","inLanguage":"de","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","description":"Kostenlos starten, Pro-Abo in der App"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"}}</script>
+  <!-- seo:end -->
+  <style>
+    :root {
+      --bg: #FAF8FE; --bg-deep: #F3EFFB; --card: #FFFFFF; --ink: #1B1526; --muted: #6B6478;
+      --violett: #7C3AED; --violett-deep: #6D28D9; --violett-soft: #EDE9FE; --violett-line: #C4B5FD;
+      --violett-hell: #A78BFA; --nacht: #1D1830; --nacht-line: #322A4D;
+      --border: #E7E1F4; --gruen: #16A34A;
+      --ampel-gruen: #16A34A; --ampel-orange: #EA580C; --ampel-rot: #DC2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    /* sanfte Farbwolken statt Raster — hell & freundlich */
+    .glow { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(560px 360px at 12% -4%, rgba(124,58,237,.10), transparent 65%),
+        radial-gradient(640px 420px at 96% 12%, rgba(167,139,250,.12), transparent 65%),
+        radial-gradient(520px 380px at 50% 110%, rgba(109,40,217,.07), transparent 65%); }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+    a { color: var(--violett-deep); }
+
+    /* Header: hell, mit violetter Kante */
+    .sitehead { position: sticky; top: 0; z-index: 50; background: rgba(250,248,254,.92);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      border-bottom: 3px solid var(--violett); }
+    header { padding: 13px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 40px; height: 40px; border-radius: 11px; overflow: hidden;
+      outline: 2px solid var(--violett-line); }
+    .logo img { width: 100%; height: 100%; display: block; }
+    .brand { font-size: 20px; font-weight: 800; letter-spacing: -0.3px; }
+    .brand b { color: var(--violett-deep); }
+    .head-norm { margin-left: auto; font-size: 11.5px; font-weight: 700; letter-spacing: .8px;
+      color: var(--muted); text-transform: uppercase; }
+    @media (max-width: 680px) { .head-norm { display: none; } }
+
+    /* Hero */
+    .hero { padding: 66px 0 32px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 36px; align-items: center; }
+    @media (max-width: 840px) { .hero { grid-template-columns: 1fr; } .hero-art { order: -1; max-width: 330px; margin: 0 auto; } }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; background: var(--violett-soft);
+      color: var(--violett-deep); border: 1px solid var(--violett-line);
+      font-size: 12.5px; font-weight: 800; letter-spacing: .4px; padding: 7px 14px; border-radius: 999px; margin-bottom: 20px; }
+    h1 { font-size: clamp(34px, 5.4vw, 55px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.08; }
+    h1 .vio { color: var(--violett-deep); }
+    h1 .marker { background: linear-gradient(transparent 62%, var(--violett-soft) 62%); }
+    .sub { margin-top: 20px; font-size: 18px; color: var(--muted); max-width: 560px; }
+    .sub strong { color: var(--ink); }
+    .cta-row { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-block; font-weight: 800; font-size: 16px; padding: 15px 28px;
+      border-radius: 12px; text-decoration: none; color: #fff;
+      background: linear-gradient(135deg, var(--violett), var(--violett-deep));
+      box-shadow: 0 10px 24px rgba(124,58,237,.30);
+      transition: transform .14s ease, box-shadow .14s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(124,58,237,.38); }
+    .btn.ghost { background: var(--card); color: var(--ink); border: 1px solid var(--border); box-shadow: 0 4px 14px rgba(27,21,38,.06); }
+    .ticks { margin-top: 30px; display: flex; gap: 22px; flex-wrap: wrap; }
+    .tick { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .tick::before { content: '✓ '; color: var(--violett-deep); font-weight: 900; }
+
+    /* Sectionaltor-Buehne (CSS-animiert): Lamellen fahren ein, Pruef-Scan wandert hoch, LED rot -> gruen */
+    .hero-art { position: relative; }
+    .tor-stage { background: linear-gradient(180deg, #FFFFFF, #F6F2FD);
+      border: 1px solid var(--border); border-radius: 18px;
+      box-shadow: 0 24px 54px rgba(109,40,217,.14);
+      padding: 34px 26px 20px; position: relative; overflow: hidden; }
+    .tor-stage::after { content: ''; position: absolute; left: 0; right: 0; bottom: 52px; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--violett-line), transparent); opacity: .55; }
+    .tor { width: 210px; margin: 0 auto; position: relative; }
+    .antrieb { width: 74px; height: 22px; margin: 0 auto 6px; border-radius: 7px;
+      background: linear-gradient(180deg, #2A2242, var(--nacht)); position: relative; z-index: 3; }
+    .antrieb .led { position: absolute; right: 7px; top: 7px; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--ampel-rot); animation: led 6s ease-in-out infinite; }
+    @keyframes led {
+      0%, 57% { background: var(--ampel-rot); box-shadow: 0 0 8px 1px rgba(220,38,38,.65); }
+      62%, 100% { background: var(--ampel-gruen); box-shadow: 0 0 10px 2px rgba(22,163,74,.70); }
+    }
+    .zarge { position: relative; height: 190px; border-left: 9px solid var(--nacht); border-right: 9px solid var(--nacht);
+      border-top: 9px solid var(--nacht); border-radius: 10px 10px 0 0; overflow: hidden;
+      background: linear-gradient(180deg, #EDE9FE, #E3DCF7); }
+    .lamelle { position: absolute; left: 0; right: 0; height: 34px;
+      background: linear-gradient(180deg, #B79BF5, #9B78E8 62%, #8A63DE);
+      border-bottom: 2px solid rgba(29,24,48,.28); }
+    .lamelle::after { content: ''; position: absolute; left: 10px; right: 10px; top: 6px; height: 3px;
+      border-radius: 2px; background: rgba(255,255,255,.35); }
+    .l1 { top: 0; animation: lam1 6s cubic-bezier(.22,.61,.36,1) infinite; }
+    .l2 { top: 36px; animation: lam2 6s cubic-bezier(.22,.61,.36,1) infinite; }
+    .l3 { top: 72px; animation: lam3 6s cubic-bezier(.22,.61,.36,1) infinite; }
+    .l4 { top: 108px; animation: lam4 6s cubic-bezier(.22,.61,.36,1) infinite; }
+    .l5 { top: 144px; height: 37px; animation: lam5 6s cubic-bezier(.22,.61,.36,1) infinite; }
+    /* Fenster-Reihe auf Lamelle 2, Griff auf Lamelle 4 — wie das App-Icon */
+    .l2 .fenster { position: absolute; top: 9px; left: 14px; right: 14px; display: flex; gap: 10px; }
+    .l2 .fenster i { flex: 1; height: 14px; border-radius: 4px; background: linear-gradient(180deg, #F4F0FE, #D9CDF6);
+      border: 1px solid rgba(29,24,48,.22); }
+    .l4 .griff { position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      width: 46px; height: 11px; border-radius: 6px; background: var(--nacht); }
+    @keyframes lam1 { 0% { transform: translateX(-118%); } 6%, 100% { transform: translateX(0); } }
+    @keyframes lam2 { 0%, 3% { transform: translateX(118%); } 10%, 100% { transform: translateX(0); } }
+    @keyframes lam3 { 0%, 6% { transform: translateX(-118%); } 14%, 100% { transform: translateX(0); } }
+    @keyframes lam4 { 0%, 9% { transform: translateX(118%); } 18%, 100% { transform: translateX(0); } }
+    @keyframes lam5 { 0%, 12% { transform: translateX(-118%); } 22%, 100% { transform: translateX(0); } }
+    .scan { position: absolute; left: 4px; right: 4px; bottom: 0; height: 5px; border-radius: 3px; z-index: 2;
+      background: linear-gradient(90deg, transparent, var(--violett) 30%, var(--violett) 70%, transparent);
+      box-shadow: 0 0 16px 3px rgba(124,58,237,.55); animation: scan 6s ease-in-out infinite; }
+    @keyframes scan {
+      0%, 26% { bottom: 0; opacity: 0; }
+      32% { opacity: 1; }
+      52% { opacity: 1; }
+      58%, 100% { bottom: 172px; opacity: 0; }
+    }
+    .plakette { position: absolute; right: -13px; top: 46px; width: 42px; height: 42px; border-radius: 50%;
+      background: var(--gruen); color: #fff; display: grid; place-items: center; font-size: 21px; font-weight: 900;
+      border: 3px solid #fff; box-shadow: 0 6px 16px rgba(22,163,74,.45); transform: rotate(7deg) scale(0);
+      animation: plak 6s cubic-bezier(.34,1.56,.64,1) infinite; z-index: 4; }
+    @keyframes plak { 0%, 60% { transform: rotate(7deg) scale(0); } 66%, 100% { transform: rotate(7deg) scale(1); } }
+    .boden { height: 10px; margin: 0 -26px; background: linear-gradient(180deg, #DDD3F2, #CFC2EC); }
+    .stage-caption { margin: 16px 0 2px; color: var(--muted); font-size: 13px; font-weight: 600; text-align: center;
+      letter-spacing: .4px; }
+    @media (prefers-reduced-motion: reduce) {
+      .lamelle, .antrieb .led, .scan, .plakette { animation: none; }
+      .lamelle { transform: none; } .scan { opacity: 0; }
+      .antrieb .led { background: var(--ampel-gruen); }
+      .plakette { transform: rotate(7deg) scale(1); }
+    }
+
+    /* Wellen-Trenner: weiche Punkte statt harter Striche */
+    .punkte { display: flex; justify-content: center; gap: 12px; padding: 10px 0; }
+    .punkte i { width: 8px; height: 8px; border-radius: 50%; background: var(--violett-line); opacity: .55; }
+    .punkte i:nth-child(odd) { background: var(--violett); opacity: .35; }
+
+    section { padding: 46px 0; }
+    .eyebrow { color: var(--violett-deep); font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; margin-bottom: 8px; }
+    h2 { font-size: clamp(24px, 3.6vw, 32px); font-weight: 900; letter-spacing: -0.7px; margin-bottom: 8px; }
+    .lead { color: var(--muted); font-size: 16px; max-width: 640px; margin-bottom: 26px; }
+
+    /* Funktions-Karten: weiche, runde, helle Karten */
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .karte { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px;
+      box-shadow: 0 4px 16px rgba(27,21,38,.04);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+    .karte:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(109,40,217,.13); border-color: var(--violett-line); }
+    .karte .chip { width: 48px; height: 48px; border-radius: 13px; display: grid; place-items: center;
+      font-size: 23px; margin-bottom: 14px; background: var(--violett-soft); border: 1px solid var(--violett-line); }
+    .karte h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .karte p { font-size: 14.5px; color: var(--muted); }
+
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 2px; }
+    .dot.g { background: var(--ampel-gruen); } .dot.o { background: var(--ampel-orange); } .dot.r { background: var(--ampel-rot); }
+
+    /* Ablauf: Torschiene als Leitlinie */
+    .schiene { position: relative; max-width: 720px; }
+    .schiene::before { content: ''; position: absolute; left: 16px; top: 8px; bottom: 16px; width: 5px;
+      border-radius: 3px; background: linear-gradient(180deg, var(--violett), var(--violett-hell)); opacity: .9; }
+    .halt { position: relative; padding: 0 0 30px 64px; }
+    .halt .rolle { position: absolute; left: 4px; top: 2px; width: 30px; height: 30px; border-radius: 50%;
+      background: #fff; border: 3px solid var(--violett); color: var(--violett-deep);
+      display: grid; place-items: center; font-weight: 900; font-size: 14px; z-index: 1;
+      box-shadow: 0 4px 12px rgba(124,58,237,.22); }
+    .halt strong { font-size: 16.5px; }
+    .halt p { color: var(--muted); font-size: 14.5px; margin-top: 2px; }
+
+    /* Preise */
+    .price-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); max-width: 720px; }
+    .price { background: var(--card); border: 1px solid var(--border); border-top: 5px solid var(--violett-line);
+      border-radius: 16px; padding: 26px 24px; box-shadow: 0 4px 16px rgba(27,21,38,.04); }
+    .price.pro { background: var(--nacht); color: #fff; border-color: var(--nacht); border-top-color: var(--violett-hell); }
+    .price h3 { font-size: 18px; font-weight: 800; }
+    .price .amount { font-size: 38px; font-weight: 900; letter-spacing: -1px; margin: 10px 0 2px; }
+    .price.pro .amount { color: var(--violett-hell); }
+    .price .per { font-size: 13px; color: var(--muted); }
+    .price.pro .per { color: #A79CC9; }
+    .price ul { list-style: none; margin-top: 16px; }
+    .price li { font-size: 14.5px; padding: 4px 0; color: var(--muted); }
+    .price.pro li { color: #DDD6F1; }
+    .price li::before { content: '✓ '; color: var(--violett); font-weight: 900; }
+    .price.pro li::before { color: var(--violett-hell); }
+    .tag { display: inline-block; font-size: 11px; font-weight: 800; color: #fff;
+      background: var(--violett); padding: 4px 10px; border-radius: 6px; margin-left: 8px; vertical-align: middle; }
+
+    /* Suite-Block: Violett-Nacht */
+    .suite { margin-top: 30px; background: var(--nacht); color: #F1EDFA;
+      border-radius: 18px; padding: 38px 32px; border: 1px solid var(--nacht-line); }
+    .suite-pill { display: inline-block; font-size: 12px; font-weight: 900; letter-spacing: 1.2px;
+      text-transform: uppercase; color: #fff; background: var(--violett); padding: 6px 14px; border-radius: 999px; }
+    .suite h3 { font-size: 27px; font-weight: 900; letter-spacing: -.6px; margin-top: 16px; }
+    .suite .sl { color: #A79CC9; font-size: 15px; margin-top: 10px; max-width: 640px; }
+    .suite .sl b { color: #F1EDFA; }
+    .suite-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+    @media (max-width: 700px) { .suite-prices { grid-template-columns: 1fr; } }
+    .sp { background: #262040; border: 1px solid var(--nacht-line); border-radius: 12px; padding: 22px; position: relative; }
+    .sp.best { border: 2px solid var(--violett-hell); }
+    .sp-badge { position: absolute; top: -13px; right: 16px; font-size: 11.5px; font-weight: 900;
+      color: #fff; background: var(--violett); padding: 4px 11px; border-radius: 6px; }
+    .sp-name { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #A79CC9; }
+    .sp.best .sp-name { color: var(--violett-hell); }
+    .sp-strike { color: #6B6480; font-size: 14px; text-decoration: line-through; margin-top: 10px; }
+    .sp-amount { font-size: 32px; font-weight: 900; letter-spacing: -.8px; }
+    .sp-amount small { font-size: 14px; font-weight: 600; color: #A79CC9; }
+    .sp-note { color: #A79CC9; font-size: 13px; margin-top: 4px; }
+    .suite-icons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+    .suite-icons img { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--nacht-line); }
+    .suite-list { list-style: none; margin-top: 18px; }
+    .suite-list li { font-size: 14.5px; padding: 5px 0 5px 24px; position: relative; }
+    .suite-list li::before { content: '▪'; color: var(--violett-hell); position: absolute; left: 0; }
+    .suite-how { color: #A79CC9; font-size: 13.5px; margin: 18px 0 20px; }
+    .suite-how a { color: var(--violett-hell); }
+
+    /* Cross-Promo */
+    .promo-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+    .promo { display: flex; gap: 14px; align-items: center; background: var(--card);
+      border: 1px solid var(--border); border-radius: 14px; padding: 16px;
+      text-decoration: none; color: var(--ink); transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+    .promo:hover { border-color: var(--violett-line); transform: translateY(-3px); box-shadow: 0 12px 26px rgba(109,40,217,.12); }
+    .promo img { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 12px; }
+    .promo b { display: block; font-size: 15.5px; }
+    .promo span { font-size: 13px; color: var(--muted); }
+
+    /* Scroll-Reveal */
+    .reveal.pre { opacity: 0; transform: translateY(18px); }
+    .reveal.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1); }
+    .grid .reveal.in:nth-child(2), .promo-grid .reveal.in:nth-child(2) { transition-delay: .07s; }
+    .grid .reveal.in:nth-child(3), .promo-grid .reveal.in:nth-child(3) { transition-delay: .14s; }
+    .grid .reveal.in:nth-child(4), .promo-grid .reveal.in:nth-child(4) { transition-delay: .21s; }
+    .grid .reveal.in:nth-child(5), .promo-grid .reveal.in:nth-child(5) { transition-delay: .28s; }
+    .grid .reveal.in:nth-child(6), .promo-grid .reveal.in:nth-child(6) { transition-delay: .35s; }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero > div > * { opacity: 0; transform: translateY(16px); animation: rise .7s cubic-bezier(.22,.61,.36,1) forwards; }
+      .hero > div > *:nth-child(2) { animation-delay: .08s; }
+      .hero > div > *:nth-child(3) { animation-delay: .16s; }
+      .hero > div > *:nth-child(4) { animation-delay: .24s; }
+      .hero > div > *:nth-child(5) { animation-delay: .32s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+    }
+
+    /* Footer */
+    .foot { background: var(--nacht); color: #A79CC9; margin-top: 40px; border-top: 3px solid var(--violett); }
+    .foot-inner { display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between;
+      padding: 30px 0 46px; font-size: 14px; }
+    .foot a { color: #DDD6F1; }
+    .foot nav { display: flex; gap: 16px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="sitehead">
+    <div class="wrap">
+      <header>
+        <span class="logo"><img src="toredex-icon.png" alt="ToreDex" /></span>
+        <span class="brand">Tore<b>Dex</b></span>
+        <span class="head-norm">ASR A1.7 · DGUV I 208-022 · BetrSichV</span>
+      </header>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <span class="kicker">Hausverwaltung · Facility Management · Industrie · Tor-Service · 🇩🇪 🇦🇹 🇨🇭</span>
+        <h1>Jedes kraftbetätigte Tor ist eine <span class="vio marker">Prüfpflicht.</span></h1>
+        <p class="sub">
+          Ein Unfall am Hallentor oder in der Tiefgarage — und Berufsgenossenschaft, Versicherung
+          und Gericht fragen als Erstes nach dem Prüfnachweis genau dieses Tores. ToreDex führt dein
+          komplettes Tor-Inventar und macht jede Kontrolle nach <strong>ASR A1.7 &amp;
+          DGUV Information 208-022</strong> zur gerichtsfesten Beweiskette: 12-Punkte-Checkliste,
+          Ampelverfahren, GPS-Stempel, Beweisfotos, PDF-Prüfprotokoll.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#" id="store-link">Bald im Google Play Store</a>
+          <a class="btn ghost" href="#funktionen">Mehr erfahren</a>
+        </div>
+        <div class="ticks">
+          <span class="tick">Fälligkeit je Tor</span>
+          <span class="tick">Einträge unveränderlich</span>
+          <span class="tick">GPS + Foto automatisch</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="tor-stage">
+          <div class="tor">
+            <div class="antrieb"><span class="led"></span></div>
+            <div class="zarge">
+              <div class="lamelle l1"></div>
+              <div class="lamelle l2"><span class="fenster"><i></i><i></i><i></i><i></i></span></div>
+              <div class="lamelle l3"></div>
+              <div class="lamelle l4"><span class="griff"></span></div>
+              <div class="lamelle l5"></div>
+              <div class="scan"></div>
+            </div>
+            <div class="plakette">✓</div>
+          </div>
+          <div class="stage-caption">Tor für Tor geprüft — alles dokumentiert.</div>
+          <div class="boden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="punkte" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div style="background:var(--bg-deep)">
+    <div class="wrap">
+      <section id="funktionen">
+        <div class="eyebrow">Funktionen</div>
+        <h2>Deine Beweiskette</h2>
+        <div class="grid">
+          <div class="karte reveal"><span class="chip">🚪</span><h3>Inventar je Tor</h3>
+            <p>Jedes Tor einzeln erfasst — Torart (Sectionaltor, Rolltor, Schiebetor, Schnelllauftor, Schranke u.&nbsp;v.&nbsp;m.), Antrieb kraft- oder handbetätigt, Hersteller, Baujahr, Maße und Seriennummer. Stillgelegte Tore bleiben nachweisbar im Bestand.</p></div>
+          <div class="karte reveal"><span class="chip">✅</span><h3>Checkliste nach ASR A1.7 / DGUV I 208-022</h3>
+            <p>12 Prüfpunkte — Kennzeichnung, Schließkantensicherung, Lichtschranke, Kraftbegrenzung, Fangvorrichtung, Federn &amp; Seile, Führungen &amp; Rollen, Notentriegelung, Quetsch- &amp; Scherstellen, Schlupftür, Elektrik, Torblatt &amp; Funktion. Sichtkontrolle und Sachkundigen-Prüfung getrennt dokumentiert.</p></div>
+          <div class="karte reveal"><span class="chip">⏰</span><h3>Fälligkeit je Tor</h3>
+            <p>ToreDex rechnet pro Tor: Sachkundigen-Prüfung mindestens jährlich, Sichtkontrolle monatlich. Das Objekt zeigt sofort, wie viele Tore fällig sind — nichts rutscht durch.</p></div>
+          <div class="karte reveal"><span class="chip">🚦</span><h3>Ampelverfahren mit Stilllegungs-Doku</h3>
+            <p><span class="dot g"></span> beobachten, <span class="dot o"></span> instand setzen lassen, <span class="dot r"></span> Tor stilllegen &amp; gegen Benutzung sichern: Mängel einstufen und die Stilllegung des Tores rechtssicher dokumentieren.</p></div>
+          <div class="karte reveal"><span class="chip">🔒</span><h3>Unveränderlich (append-only)</h3>
+            <p>Prüfungen können nie bearbeitet oder gelöscht werden — nur gekennzeichnete Stornos mit Begründung. GPS- und Zeitstempel plus Beweisfotos inklusive. Genau das überzeugt vor Gericht.</p></div>
+          <div class="karte reveal"><span class="chip">📄</span><h3>PDF-Prüfprotokoll</h3>
+            <p>Ein Tipp erzeugt das Prüfprotokoll pro Objekt und Zeitraum — dein digitales Prüfbuch für Unterlagen, Versicherung oder BG. Inklusive Rechtsgrundlage deines Landes (DE/AT/CH).</p></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="punkte" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="wrap">
+    <section>
+      <div class="eyebrow">Ablauf</div>
+      <h2>So funktioniert's</h2>
+      <div class="schiene">
+        <div class="halt reveal"><span class="rolle">1</span><strong>Objekt &amp; Tore anlegen.</strong>
+          <p>Halle, Tiefgarage, Wohnanlage — und darunter jedes Tor mit Torart, Antrieb und Baujahr. Objekte sind unbegrenzt, auch in der Free-Version.</p></div>
+        <div class="halt reveal"><span class="rolle">2</span><strong>Prüfung dokumentieren.</strong>
+          <p>Tor wählen, 12-Punkte-Checkliste durchgehen, Mängel per Ampel einstufen, Foto dazu — GPS und Zeitstempel ergänzt ToreDex automatisch. Auch „alles in Ordnung" ist ein Nachweis.</p></div>
+        <div class="halt reveal"><span class="rolle">3</span><strong>Prüfprotokoll teilen.</strong>
+          <p>PDF pro Objekt und Zeitraum an Eigentümer, Geschäftsführung, Versicherung oder Berufsgenossenschaft — oder im Streitfall an den Anwalt.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Preise</div>
+      <h2>Preise</h2>
+      <div class="price-grid">
+        <div class="price reveal">
+          <h3>Free</h3>
+          <div class="amount">0&nbsp;€</div>
+          <div class="per">für immer</div>
+          <ul>
+            <li>5 Tore in vollem Umfang</li>
+            <li>Objekte unbegrenzt</li>
+            <li>ASR-Checkliste, Ampel, GPS, Fotos</li>
+            <li>PDF-Prüfprotokoll mit Wasserzeichen</li>
+            <li>Cloud-Sync auf allen Geräten</li>
+          </ul>
+        </div>
+        <div class="price pro reveal">
+          <h3>Pro <span class="tag">Empfohlen</span></h3>
+          <div class="amount">9,99&nbsp;€</div>
+          <div class="per">pro Monat · oder 79,99 €/Jahr (4 Monate geschenkt) · jederzeit kündbar</div>
+          <ul>
+            <li>Unbegrenzt Tore</li>
+            <li>Team: Mitarbeiter einladen</li>
+            <li>PDF-Prüfprotokoll ohne Wasserzeichen</li>
+            <li>Prüf-Erinnerung</li>
+            <li>Priorisierter Support</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dexware Suite Bundle -->
+      <div class="suite" id="suite">
+        <span class="suite-pill">Dexware Suite — ein Abo, alle Apps</span>
+        <h3>Alle 14 Dexware-Apps. Ein Abo.</h3>
+        <p class="sl">
+          Die Suite kostet so viel wie unsere teuerste Einzel-App — und schaltet <b>alle</b> Dexware-Apps
+          auf allen deinen Geräten frei. Neue Apps kommen automatisch dazu, ohne Aufpreis.
+        </p>
+        <div class="suite-prices">
+          <div class="sp">
+            <div class="sp-name">Monatlich</div>
+            <div class="sp-strike">über 100 € — alle Apps einzeln</div>
+            <div class="sp-amount">29,99 € <small>/ Monat</small></div>
+            <div class="sp-note">Der Preis unserer teuersten Einzel-App — über 65 % günstiger als alles einzeln.</div>
+          </div>
+          <div class="sp best">
+            <span class="sp-badge">4 Monate geschenkt · −33 %</span>
+            <div class="sp-name">Jährlich</div>
+            <div class="sp-strike">statt 359,88 € (12 × 29,99 €)</div>
+            <div class="sp-amount">239,99 € <small>/ Jahr</small></div>
+            <div class="sp-note">Entspricht 20,00 € im Monat — du zahlst nur 8 von 12 Monaten.</div>
+          </div>
+        </div>
+        <div class="suite-icons">
+          <img src="toredex-icon.png" alt="ToreDex" title="ToreDex" />
+          <img src="feuerdex-icon.png" alt="FeuerDex" title="FeuerDex" />
+          <img src="geruestdex-icon.png" alt="GerüstDex" title="GerüstDex" />
+          <img src="leiterdex-icon.png" alt="LeiterDex" title="LeiterDex" />
+          <img src="regaldex-icon.png" alt="RegalDex" title="RegalDex" />
+          <img src="spieldex-icon.png" alt="SpielDex" title="SpielDex" />
+          <img src="winterdex-icon.png" alt="WinterDex" title="WinterDex" />
+          <img src="kfzdex-icon.png" alt="KfzDex" title="KfzDex" />
+          <img src="pruefdex-icon.png" alt="PrüfDex" title="PrüfDex" />
+          <img src="schutzheld-icon.png" alt="SchutzDex" title="SchutzDex" />
+          <img src="baumdex-icon.png" alt="BaumDex" title="BaumDex" />
+          <img src="routelog-icon.png" alt="TourDex" title="TourDex" />
+          <img src="craftdex-icon.png" alt="CraftDex" title="CraftDex" />
+          <img src="archio-icon.png" alt="DokuDex" title="DokuDex" />
+        </div>
+        <ul class="suite-list">
+          <li>Alle 14 Apps inklusive — von Torprüfung bis Winterdienst</li>
+          <li>Alle zukünftigen Dexware-Apps automatisch dabei</li>
+          <li>Einmal kaufen — in jeder App freigeschaltet</li>
+          <li>Jederzeit kündbar</li>
+        </ul>
+        <p class="suite-how">Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.</p>
+        <a href="https://dexware.app/" target="_blank" rel="noopener" class="btn">Mehr zur Dexware Suite →</a>
+        <p class="suite-how" style="margin-top:14px">💻 Fürs Web gibt's einen Haupteinstieg: <a href="https://dashboard.dexware.app" target="_blank" rel="noopener">dashboard.dexware.app</a> — die Übersicht aller App-Dashboards, auch für ToreDex.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Die Dexware-Familie</div>
+      <h2>Entdecke die ganze Dexware</h2>
+      <p class="lead">ToreDex ist Teil der Dexware-Familie — Pflicht-Dokumentation, die einfach funktioniert.</p>
+      <div class="promo-grid">
+        <a class="promo reveal" href="https://feuerdex.dexware.app" target="_blank" rel="noopener">
+          <img src="feuerdex-icon.png" alt="FeuerDex" width="48" height="48" />
+          <span><b>FeuerDex</b><span>Feuerlöscher-Prüfung nach ASR A2.2 &amp; DIN 14406-4 — gerichtsfest.</span></span></a>
+        <a class="promo reveal" href="https://geruestdex.dexware.app" target="_blank" rel="noopener">
+          <img src="geruestdex-icon.png" alt="GerüstDex" width="48" height="48" />
+          <span><b>GerüstDex</b><span>Gerüstprüfung nach TRBS 2121-1 — gerichtsfest dokumentiert.</span></span></a>
+        <a class="promo reveal" href="https://leiterdex.dexware.app" target="_blank" rel="noopener">
+          <img src="leiterdex-icon.png" alt="LeiterDex" width="48" height="48" />
+          <span><b>LeiterDex</b><span>Leitern- &amp; Tritte-Prüfung nach BetrSichV &amp; DGUV — gerichtsfest.</span></span></a>
+        <a class="promo reveal" href="https://regaldex.dexware.app" target="_blank" rel="noopener">
+          <img src="regaldex-icon.png" alt="RegalDex" width="48" height="48" />
+          <span><b>RegalDex</b><span>Regalinspektion nach DIN EN 15635 — Ampelverfahren &amp; Prüfbericht.</span></span></a>
+        <a class="promo reveal" href="https://pruefdex.dexware.app" target="_blank" rel="noopener">
+          <img src="pruefdex-icon.png" alt="PrüfDex" width="48" height="48" />
+          <span><b>PrüfDex</b><span>DGUV-V3-Prüfung: Geräte, Protokolle, Plaketten &amp; Fristen.</span></span></a>
+        <a class="promo reveal" href="https://spieldex.dexware.app" target="_blank" rel="noopener">
+          <img src="spieldex-icon.png" alt="SpielDex" width="48" height="48" />
+          <span><b>SpielDex</b><span>Spielplatzkontrolle nach DIN EN 1176 — gerichtsfest dokumentiert.</span></span></a>
+        <a class="promo reveal" href="https://winterdex.dexware.app" target="_blank" rel="noopener">
+          <img src="winterdex-icon.png" alt="WinterDex" width="48" height="48" />
+          <span><b>WinterDex</b><span>Winterdienst gerichtsfest — Räum- &amp; Streupflicht mit GPS &amp; Wetter.</span></span></a>
+        <a class="promo reveal" href="https://kfzdex.dexware.app" target="_blank" rel="noopener">
+          <img src="kfzdex-icon.png" alt="KfzDex" width="48" height="48" />
+          <span><b>KfzDex</b><span>Fuhrpark-Verwaltung — UVV-Prüfung, Führerscheinkontrolle &amp; Fristen.</span></span></a>
+        <a class="promo reveal" href="https://schutzdex.dexware.app" target="_blank" rel="noopener">
+          <img src="schutzheld-icon.png" alt="SchutzDex" width="48" height="48" />
+          <span><b>SchutzDex</b><span>KI-Unterweisung &amp; Gefährdungsbeurteilung — prüffest dokumentiert.</span></span></a>
+        <a class="promo reveal" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener">
+          <img src="baumdex-icon.png" alt="BaumDex" width="48" height="48" />
+          <span><b>BaumDex</b><span>Baumkataster &amp; Verkehrssicherung für GaLaBau und Baumpflege.</span></span></a>
+        <a class="promo reveal" href="https://craftdex.dexware.app" target="_blank" rel="noopener">
+          <img src="craftdex-icon.png" alt="CraftDex" width="48" height="48" />
+          <span><b>CraftDex</b><span>Aufträge, Zeiten &amp; Material — die App für Handwerksbetriebe.</span></span></a>
+        <a class="promo reveal" href="https://tourdex.dexware.app" target="_blank" rel="noopener">
+          <img src="routelog-icon.png" alt="TourDex" width="48" height="48" />
+          <span><b>TourDex</b><span>Automatisches Fahrtenbuch — KI trennt geschäftlich &amp; privat.</span></span></a>
+        <a class="promo reveal" href="https://dokudex.dexware.app" target="_blank" rel="noopener">
+          <img src="archio-icon.png" alt="DokuDex" width="48" height="48" />
+          <span><b>DokuDex</b><span>Dokumente scannen &amp; per KI verstehen — mit Fristen-Erinnerung.</span></span></a>
+      </div>
+      <p style="text-align:center;margin-top:20px">
+        <a href="https://dexware.app/" target="_blank" rel="noopener">Alle Dexware-Apps auf einen Blick →</a>
+      </p>
+    </section>
+  </div>
+
+  <div class="foot">
+    <div class="wrap">
+      <div class="foot-inner">
+        <span>© 2026 ToreDex · Alexander Pfalz</span>
+        <nav>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="konto-loeschung.html">Konto löschen</a>
+          <a href="mailto:2easy4trash@gmail.com?subject=ToreDex%20Support">Support</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced && 'IntersectionObserver' in window) {
+        var els = document.querySelectorAll('.reveal');
+        for (var j = 0; j < els.length; j++) els[j].classList.add('pre');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        for (var k = 0; k < els.length; k++) io.observe(els[k]);
+      }
+    })();
+  </script>
+</body>
+</html>
