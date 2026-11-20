@@ -344,10 +344,9 @@
 
     .st-block .fl { position: absolute; background: var(--accent); }
     .st-block .fl { inset: 0 0 0 auto; width: 46%; background: repeating-linear-gradient(180deg, var(--accent) 0 86px, color-mix(in oklab, var(--accent) 78%, #000) 86px 90px, color-mix(in oklab, var(--accent) 90%, #fff) 90px 92px); }
-    .st-block .fl::after { content: ''; position: absolute; left: 12%; right: 12%; top: 182px; height: 78px; border-radius: 6px;
-      background: repeating-linear-gradient(90deg, color-mix(in oklab, var(--bg) 78%, transparent) 0 22%, transparent 22% 26%); }
     .st-block .word { position: absolute; left: -1.5vw; bottom: -5.2vw; font-size: clamp(120px, 23vw, 380px); line-height: 1; font-weight: 850; letter-spacing: -.055em;
-      white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px color-mix(in oklab, var(--ink) 11%, transparent); user-select: none; }
+      white-space: nowrap; color: transparent; -webkit-text-stroke: 1.5px color-mix(in oklab, var(--ink) 12%, transparent); user-select: none;
+      -webkit-mask-image: linear-gradient(0deg, #000 34%, transparent 62%); mask-image: linear-gradient(0deg, #000 34%, transparent 62%); }
     .hero.st-block-h .shots .phone { box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 0 0 1px rgba(0,0,0,.55), 0 44px 60px -28px rgba(0,0,0,.75), 0 16px 26px -14px rgba(0,0,0,.5); }
     @media (max-width: 900px) {
       .st-block .fl { inset: auto 0 0 0 !important; width: auto !important; height: 330px; aspect-ratio: auto !important; translate: none !important; rotate: none !important;
