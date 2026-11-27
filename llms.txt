@@ -35,10 +35,18 @@ Gedacht für Hausverwaltung, Facility Management, Industrie und Tor-Service.
 - Dexware Suite (Prüf-Paket): alle 9 Prüf-Apps der Suite (GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex, HebeDex) für 24,99 € im Monat oder 199,99 € im Jahr (entspricht 16,67 € im Monat), ab 3 Prüf-Apps günstiger als einzeln.
 - Preise inkl. MwSt., Abo jederzeit kündbar.
 
+## Was ToreDex nicht ist
+
+- Kein Ersatz für die sachkundige Person: ToreDex unterstützt ausschließlich bei der Dokumentation und ersetzt keine fachliche Beurteilung. ToreDex nimmt niemandem die Sachkunde ab, es dokumentiert, was der Prüfer feststellt.
+- Keine Rechtsberatung: Die Ratgeber von ToreDex geben die Vorschriften allgemein verständlich wieder und ersetzen keine Rechtsberatung.
+- Eine iPhone-App im App Store gibt es noch nicht; am iPhone und iPad läuft ToreDex im Browser (Tore prüfen — mit Checkliste, Fotos und Unterschrift). QR-Scan, Erinnerungen und einige Extras gibt es vorerst nur in der Android-App.
+
 ## Kurz beantwortet
 
 - Welche Punkte gehören auf die Checkliste für ein Rolltor? Neben Schließkante, Lichtschranke und Kraftbegrenzung vor allem die Fangvorrichtung gegen Feder- oder Seilbruch, Federn und Seile, Führungen und Rollen, die Notentriegelung, Quetschstellen und, falls vorhanden, die Schlupftür.
+- Gibt es eine App für die Torprüfung nach ASR A1.7? Ja. ToreDex führt mit zwölf Punkten nach ASR A1.7 durch die Prüfung kraftbetätigter Tore, von Schließkante und Lichtschranke bis zur Notentriegelung, und stuft jeden Befund per Ampel ein: beobachten, instand setzen oder Tor stilllegen.
 - Wie oft ist eine Torprüfung fällig? Wiederkehrend mindestens einmal im Jahr durch einen Sachkundigen, so sieht es die ASR A1.7 vor. An Logistikrampen mit vielen Torfahrten am Tag kann ein kürzeres Intervall angemessen sein.
+- Muss die Torprüfung dokumentiert werden? Ja. Das Ergebnis der Prüfung ist nach ASR A1.7 aufzuzeichnen und in der Arbeitsstätte aufzubewahren, üblich ist ein Prüfbuch je Tor. Darin stehen Torangaben, Datum und Art der Prüfung, der Sachkundige, das Ergebnis je Prüfpunkt mit Mängeln, die getroffenen Maßnahmen und der nächste Prüftermin.
 - Wer darf Rolltore und Sektionaltore prüfen? Ein Sachkundiger, also jemand mit Ausbildung und Erfahrung an kraftbetätigten Toren, der die einschlägigen Vorschriften und Normen kennt. Meist sind das Fachkräfte von Torbau- und Wartungsbetrieben oder geschulte Haustechniker.
 - Kann die Hausverwaltung die Tore im Büro einsehen? Ja, das Dexware-Dashboard zeigt Objekte, Tore, Prüfungen und Protokolle im Browser.
 - Gilt die Prüfpflicht auch fürs Tiefgaragentor der Wohnanlage? Unmittelbar gilt die ASR A1.7 nur in Arbeitsstätten. Für das Garagentor stehen aber Eigentümergemeinschaft oder Vermieter über die Verkehrssicherungspflicht ein, deshalb wird es in der Praxis ebenso jährlich geprüft und dokumentiert.
