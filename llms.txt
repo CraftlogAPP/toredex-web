@@ -1,0 +1,67 @@
+# ToreDex
+
+> ToreDex ist eine App von Dexware. Prüfung von Rolltoren, Sektionaltoren und Schranken nach ASR A1.7: Checkliste mit 12 Punkten, Mängel-Ampel, Fristen und digitales Prüfbuch als PDF. Android-App bei Google Play, am iPhone im Browser. Gratis: 2 Tore, Objekte unbegrenzt; Pro 9,99 € im Monat oder 79,99 € im Jahr.
+
+Sachliche Kurzinfo für Sprachmodelle und Suchdienste. Maßgeblich sind die Angaben auf https://toredex.dexware.app/. Anbieter: Dexware (https://dexware.app/), Kontakt: support@dexware.app.
+
+## Was ToreDex macht
+
+- Checkliste fürs Rolltor: Zwölf Punkte nach ASR A1.7, darunter Schließkante, Lichtschranke, Kraftbegrenzung, Fangvorrichtung und Notentriegelung. Jeder Befund bekommt eine Ampelstufe: beobachten, instand setzen oder Tor stilllegen.
+- Torakte mit Seriennummer: Torart, Antrieb, Hersteller, Baujahr und Seriennummer stehen bei jedem Tor. Wann die Jahresprüfung je Tor fällig ist, zeigt ToreDex selbst; an den Monatscheck erinnert dich die App am Monatsersten (Pro). Ein stillgelegtes Tor bleibt im Nachweis.
+- Protokoll, das keiner umschreibt: Das PDF bündelt ein Objekt, für den aktuellen Monat oder die gesamte Historie, samt Rechtsgrundlage je nach Land, ob Deutschland, Österreich oder Schweiz. Gespeicherte Prüfungen sind gesperrt, ein Storno braucht einen Grund.
+
+## Am PC im Dexware-Dashboard
+
+Was du am Tor prüfst, siehst du im Dexware-Dashboard am Computer — mit demselben Konto, ohne Installation.
+
+- Fällige Prüfungen: Aktive Objekte, offene Mängel und welche Sachkundigen-Prüfung als Nächste fällig ist, auf einer Seite.
+- Prüfprotokoll-PDF: Je Objekt und Zeitraum, mit Checklisten, Tor-Inventar mit Torart, Antrieb und Baujahr, Mängeln und Fotos.
+- Excel rein und raus: Tore und Türen aus einer Liste einlesen, Prüfbuch und Prüfungen als Excel-Datei.
+- Team per Code: Mitarbeiter mit einem Team-Code dazuholen (Pro), Mitglieder sehen und entfernen.
+
+## Für wen
+
+Gedacht für Hausverwaltung, Facility Management, Industrie und Tor-Service.
+
+## Preise
+
+- Gratis (für immer): 2 Tore, Objekte unbegrenzt; Checkliste, Ampel, GPS, Fotos; PDF-Protokoll mit Wasserzeichen; Cloud-Sync auf allen Geräten
+- Pro: 9,99 € im Monat oder 79,99 € im Jahr. Enthält: Unbegrenzt Tore; PDF ohne Wasserzeichen; Team mit bis zu 20 Mitarbeitern; Prüf-Erinnerung; Priorisierter Support
+- Stufen nach Teamgröße (ein Abo pro Betrieb, Mitarbeiter treten per Team-Code bei und brauchen kein eigenes Abo):
+  - Pro (bis 20 Mitarbeiter): 9,99 € im Monat · 79,99 € im Jahr
+  - Team (bis 50 Mitarbeiter): 14,99 € im Monat · 119,99 € im Jahr
+  - Team XL (bis 100 Mitarbeiter): 19,99 € im Monat · 159,99 € im Jahr
+  - Unternehmen (über 100 Mitarbeiter): Angebot · auf Rechnung
+- Dexware Suite (Prüf-Paket): alle 9 Prüf-Apps der Suite (GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex, HebeDex) für 24,99 € im Monat oder 199,99 € im Jahr (entspricht 16,67 € im Monat), ab 3 Prüf-Apps günstiger als einzeln.
+- Preise inkl. MwSt., Abo jederzeit kündbar.
+
+## Kurz beantwortet
+
+- Welche Punkte gehören auf die Checkliste für ein Rolltor? Neben Schließkante, Lichtschranke und Kraftbegrenzung vor allem die Fangvorrichtung gegen Feder- oder Seilbruch, Federn und Seile, Führungen und Rollen, die Notentriegelung, Quetschstellen und, falls vorhanden, die Schlupftür.
+- Wie oft ist eine Torprüfung fällig? Wiederkehrend mindestens einmal im Jahr durch einen Sachkundigen, so sieht es die ASR A1.7 vor. An Logistikrampen mit vielen Torfahrten am Tag kann ein kürzeres Intervall angemessen sein.
+- Wer darf Rolltore und Sektionaltore prüfen? Ein Sachkundiger, also jemand mit Ausbildung und Erfahrung an kraftbetätigten Toren, der die einschlägigen Vorschriften und Normen kennt. Meist sind das Fachkräfte von Torbau- und Wartungsbetrieben oder geschulte Haustechniker.
+- Kann die Hausverwaltung die Tore im Büro einsehen? Ja, das Dexware-Dashboard zeigt Objekte, Tore, Prüfungen und Protokolle im Browser.
+- Gilt die Prüfpflicht auch fürs Tiefgaragentor der Wohnanlage? Unmittelbar gilt die ASR A1.7 nur in Arbeitsstätten. Für das Garagentor stehen aber Eigentümergemeinschaft oder Vermieter über die Verkehrssicherungspflicht ein, deshalb wird es in der Praxis ebenso jährlich geprüft und dokumentiert.
+- Ist die Wartung nicht schon die Prüfung? Nein. Die Wartung hält das Tor in Gang, etwa durch Schmieren, Nachstellen und Tausch von Verschleißteilen. Die Prüfung stellt fest, ob es sicher ist, und hält das schriftlich fest.
+- Alle Antworten: https://toredex.dexware.app/#faq
+
+## Seiten
+
+- [Startseite](https://toredex.dexware.app/): Funktionen, Preise, häufige Fragen
+- [Preise](https://toredex.dexware.app/#preise): Gratis, Pro und Stufen nach Teamgröße
+- [Häufige Fragen](https://toredex.dexware.app/#faq)
+- [ToreDex am iPhone](https://toredex.dexware.app/#iphone): im Browser, ohne App Store
+- [Dexware-Dashboard](https://dashboard.dexware.app/app/toredex): am PC im Browser, mit demselben Konto
+- [Google Play](https://play.google.com/store/apps/details?id=com.toredex.app): Android-App
+- [Dexware](https://dexware.app/): alle Apps von Dexware
+
+## Ratgeber
+
+- [Torprüfung nach ASR A1.7: Checkliste für Rolltore & Sektionaltore](https://toredex.dexware.app/ratgeber-torpruefung.html): Rolltor, Sektionaltor, Schiebetor, Tiefgaragentor: Wie oft müssen kraftbetätigte Tore und Türen geprüft werden, wer ist Sachkundiger, was gehört ins Prüfbuch? Ratgeber zu ASR A1.7, DGUV Information 208-022 und DIN EN 12453 mit 12-Punkte-Checkliste und FAQ.
+
+## Rechtliches
+
+- [Impressum](https://toredex.dexware.app/impressum.html)
+- [Datenschutz](https://toredex.dexware.app/datenschutz.html)
+- [AGB](https://toredex.dexware.app/agb.html)
+- [AVV](https://toredex.dexware.app/avv.html)
