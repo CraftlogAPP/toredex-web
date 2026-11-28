@@ -65,7 +65,7 @@ Gedacht für Hausverwaltung, Facility Management, Industrie und Tor-Service.
 
 ## Ratgeber
 
-- [Torprüfung nach ASR A1.7: Checkliste für Rolltore & Sektionaltore](https://toredex.dexware.app/ratgeber-torpruefung.html): Rolltor, Sektionaltor, Schiebetor, Tiefgaragentor: Wie oft müssen kraftbetätigte Tore und Türen geprüft werden, wer ist Sachkundiger, was gehört ins Prüfbuch? Ratgeber zu ASR A1.7, DGUV Information 208-022 und DIN EN 12453 mit 12-Punkte-Checkliste und FAQ.
+- [Torprüfung nach ASR A1.7: Checkliste für Rolltore](https://toredex.dexware.app/ratgeber-torpruefung.html): Wie oft müssen kraftbetätigte Tore geprüft werden, wer ist Sachkundiger, was gehört ins Prüfbuch? ASR A1.7 und DIN EN 12453 mit 12-Punkte-Checkliste.
 
 ## Rechtliches
 
